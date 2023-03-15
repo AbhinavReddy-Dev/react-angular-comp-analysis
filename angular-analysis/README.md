@@ -2,14 +2,14 @@
 
 ## ToDo
 
-- [] (Week 1: 03/12/2023 - 03/18/2023) Resources for components to build and Environment set-up:
+- [ ] (Week 1: 03/12/2023 - 03/18/2023) Resources for components to build and Environment set-up:
 
-  - [] Comparing metrics set-up for Angular.
-  - [] E-commerce website with many product listings.
-  - [] Social media platform with a high volume of user-generated content.
-  - [] Web application with complex graphics and animations.
-  - [] Data visualization dashboard with real-time updates.
-  - [] Video streaming platform with an extensive library of content.
+  - [ ] Comparing metrics set-up for Angular.
+  - [ ] E-commerce website with many product listings.
+  - [ ] Social media platform with a high volume of user-generated content.
+  - [ ] Web application with complex graphics and animations.
+  - [ ] Data visualization dashboard with real-time updates.
+  - [ ] Video streaming platform with an extensive library of content.
 
 ### Getting Started
 
