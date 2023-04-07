@@ -1,4 +1,4 @@
-export type ProductCardProps = {
+export interface ProductCardProps {
   product: {
     id: number;
     title: string;
@@ -12,9 +12,9 @@ export type ProductCardProps = {
     thumbnail: string;
     images: string[];
   };
-};
+}
 
-export type Product = {
+export interface Product {
   id: number;
   title: string;
   description: string;
@@ -26,11 +26,11 @@ export type Product = {
   category: string;
   thumbnail: string;
   images: string[];
-};
+}
 
-export type ProductApiRes = {
+export interface ProductApiRes {
   limit: number;
   products: Product[];
   skip: number;
   total: number;
-};
+}
