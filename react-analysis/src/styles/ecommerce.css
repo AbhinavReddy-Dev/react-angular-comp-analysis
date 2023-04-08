@@ -33,6 +33,7 @@
   height: 200px;
   overflow: hidden;
   margin-bottom: 1rem;
+  border-radius: 15px;
 }
 .product-card__image img {
   max-width: 300px;
@@ -116,6 +117,8 @@
   max-width: 1000px;
   display: flex;
   margin: 2rem auto;
+  flex-wrap: wrap;
+
   /* flex-direction: column; */
 }
 .product-page__content {
@@ -137,13 +140,14 @@
   -webkit-box-orient: vertical;
 }
 .product-page__image {
-  width: 400px;
+  width: min(100%, 400px);
   height: 400px;
   overflow: hidden;
   margin-bottom: 1rem;
 }
 .product-page__image img {
-  max-width: 400px;
+  /* max-width: 400px; */
+  width: min(100%, 400px);
   max-height: 400px;
   object-fit: cover;
   overflow: hidden;
