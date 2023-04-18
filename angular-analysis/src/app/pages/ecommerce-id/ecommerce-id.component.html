@@ -1,0 +1,54 @@
+<div *ngIf="!product">
+  <h1>Loading</h1>
+</div>
+
+<div class="product-page" *ngIf="product">
+  <div class="product-page__image-slider">
+    <div class="product-page__image">
+      <img
+        loading="lazy"
+        height="auto"
+        width="400"
+        src="{{ product.images[imagenumber - 1] }}"
+        alt="{{ product.title }}"
+      />
+    </div>
+    <div class="image-button__container">
+      <button class="image-button" (click)="decrementCount()">Prev</button>
+      <p>{{ imagenumber }} / {{ product.images.length }}</p>
+      <button class="image-button" (click)="incrementCount()">Next</button>
+    </div>
+  </div>
+  <div class="product-page__content">
+    <h2 class="product-page__title">
+      {{ product.title }}
+      <span class="product-page__rating">
+        ⭐️ {{ product.rating.toFixed(1) }}
+      </span>
+    </h2>
+
+    <div>
+      <div class="product-page__brand">Brand: {{ product.brand }}</div>
+      <div class="product-page__category">Category: {{ product.category }}</div>
+    </div>
+
+    <div class="product-page__price">
+      <span class="product-page__price--discounted">
+        {{
+          (
+            product.price -
+            (product.price * product.discountPercentage) / 100
+          ).toFixed(2)
+        }}
+      </span>
+      <span class="product-page__price--original"> $ {{ product.price }} </span>
+    </div>
+    <div class="product-page__description">{{ product.description }}</div>
+
+    <div class="product-page__stock">In Stock: {{ product.stock }}</div>
+    <div class="product-page__actions">
+      <button class="product-page__actions--add-to-cart">Add to Cart</button>
+      <button class="product-page__actions--buy-now">Buy Now</button>
+    </div>
+  </div>
+</div>

@@ -117,7 +117,7 @@
   max-width: 1000px;
   display: flex;
   margin: 2rem auto;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 
   /* flex-direction: column; */
 }
@@ -146,7 +146,6 @@
   margin-bottom: 1rem;
 }
 .product-page__image img {
-  /* max-width: 400px; */
   width: min(100%, 400px);
   max-height: 400px;
   object-fit: cover;

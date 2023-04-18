@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Product } from "../../types/ecommerce";
 import "../../styles/ecommerce.css";
 interface ProductPageProps {
@@ -9,7 +9,7 @@ interface ProductPageProps {
 }
 
 const ProductPage = () => {
-  const params = useParams<{ id: string }>();
+  // const params = useParams<{ id: string }>();
   const [count, setCount] = useState(0);
   const {
     state: { product },
@@ -21,11 +21,11 @@ const ProductPage = () => {
       <div className="product-page__image-slider">
         <div className="product-page__image">
           <img
-            // loading="lazy"
+            loading="lazy"
             height={400}
             width={"auto"}
-            src={product.images[count % product.images.length]}
-            alt="Product"
+            src={product.images[Math.abs(count % product.images.length) + 1]}
+            alt={product.title}
           />
         </div>
         <div className="image-button__container">
@@ -33,7 +33,8 @@ const ProductPage = () => {
             Prev
           </button>
           <p>
-            {(count % product.images.length) + 1}/{product.images.length}
+            {Math.abs(count % product.images.length) + 1}/
+            {product.images.length}
           </p>
           <button className="image-button" onClick={() => setCount(count + 1)}>
             Next
