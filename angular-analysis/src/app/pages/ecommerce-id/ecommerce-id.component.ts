@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { EcommerceService } from 'src/app/services/ecommerce.service';
 import { Product } from 'src/app/types/ecommerce';
 
@@ -23,14 +22,11 @@ export class EcommerceIdComponent {
       this.id = parseInt(params.get('id') || '1');
     });
     this.ecommerceService.getProduct(this.id).subscribe((product) => {
-      console.log(product);
       this.product = product;
     });
   }
 
   updateImageNumber() {
-    // {(count % product.images.length) + 1}/{product.images.length}
-
     this.imagenumber = Math.floor(
       Math.abs(this.count % this.product.images.length) + 1
     );

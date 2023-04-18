@@ -10,7 +10,7 @@
   margin-left: 2rem;
   flex-direction: column;
   /* justify-content: center; */
-  align-items: start;
+  align-items: flex-start;
   text-align: start;
 }
 

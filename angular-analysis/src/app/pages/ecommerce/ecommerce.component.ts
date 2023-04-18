@@ -7,7 +7,6 @@ import { EcommerceService } from 'src/app/services/ecommerce.service';
   selector: 'app-ecommerce',
   templateUrl: './ecommerce.component.html',
   styleUrls: ['./ecommerce.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EcommerceComponent implements OnInit {
   data$!: Observable<ProductApiRes>;
@@ -18,12 +17,9 @@ export class EcommerceComponent implements OnInit {
   ) {}
 
   handleProductClick(product: Product) {
-    // console.log(product);
     this.router.navigate(['ecommerce', product.id]);
   }
   ngOnInit(): void {
-    // this.data$ = this.http.get<ProductApiRes>('https://dummyjson.com/products');
-    // this.products$ = this.data$.pipe(map((data) => data.products));
     this.products$ = this.ecommerceService.getProducts();
   }
 }
