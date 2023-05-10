@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
-// import { data } from "../../Components/dd_ecommerce";
+import React, { useContext, useEffect, useState } from "react";
 import { Product, ProductApiRes } from "../../types/ecommerce";
 import ProductCard from "../../Components/ProductCard";
 import "../../styles/ecommerce.css";
+import { GlobalDispatchContext, GlobalStateContext } from "../../state";
 
 const Ecommerce = () => {
+  const state = useContext(GlobalStateContext);
+  const dispatch = useContext(GlobalDispatchContext);
+
   const [products, setProducts] = useState([]) as [Product[], Function];
 
   async function getProducts() {
@@ -12,7 +15,8 @@ const Ecommerce = () => {
       const response = await fetch("https://dummyjson.com/products");
       const { products }: ProductApiRes =
         (await response.json()) as ProductApiRes;
-      setProducts(products);
+      // setProducts(products);
+      dispatch({ type: "SET_PRODUCTS", payload: products });
     } catch (error) {
       console.log(error);
     }
@@ -27,6 +31,10 @@ const Ecommerce = () => {
       isFetchValid = false;
     };
   }, []);
+
+  useEffect(() => {
+    setProducts(state.products);
+  }, [state.products]);
 
   return (
     <main>

@@ -9,8 +9,8 @@ const index = () => {
         <a title="E-Commerce Page" href="/ecommerce">
           E-Commerce
         </a>
-        <a title="Social media Page" href="/socialmedia">
-          Social Media
+        <a title="Form Input Page" href="/forminput">
+          Form Input
         </a>
       </div>
     </>
